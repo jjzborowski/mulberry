@@ -6,8 +6,4 @@ const DICTIONARY = {
     }
 };
 
-const TRANSLATE = (lang: string, key: string): any => {
-    return (DICTIONARY as any)[lang][key];
-};
-
-export default TRANSLATE;
+export default DICTIONARY;

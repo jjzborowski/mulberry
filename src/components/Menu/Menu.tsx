@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { DEFAULT_LANG } from '../../constants/constants';
-import TRANSLATE from '../../constants/dictionary';
+import TRANSLATE from '../../utilities/translate';
 
 export default () => {
     return (
