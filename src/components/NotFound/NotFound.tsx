@@ -4,6 +4,6 @@ import TRANSLATE from '../../constants/dictionary';
 
 export default () => {
     return (
-        <div>{ TRANSLATE(DEFAULT_LANG, 'l_contact') }</div>
+        <div>{ TRANSLATE(DEFAULT_LANG, 'l_not_found') }</div>
     );
 }
