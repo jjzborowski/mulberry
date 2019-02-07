@@ -1,0 +1,74 @@
+@import './colors';
+
+$borderRadius: 8px;
+$borderWidth: 2px;
+
+.button {
+  background-color: transparent;
+  border-radius: $borderRadius;
+  border: none;
+  box-shadow: 0 2px 10px 0 rgba($WestSide, 0.35), inset 0 -1px 0 0 rgba($Indochine, 0.5);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  &-primary {
+    background-image: radial-gradient(circle at 50% 0, $TreePoppy, $FlushOrange);
+    color: $White;
+    height: 52px;
+    padding: 18px 18px 17px;
+    text-align: center;
+
+    &:hover {
+      background: {
+        color: $GoldDrop;
+        image: none;
+      }
+    }
+
+    &:active {
+      background-image: radial-gradient(circle at 50% 0, $TreePoppy, $FlushOrange);
+    }
+
+    &:disabled {
+      background: {
+        color: $Mercury;
+        image: none;
+      }
+      box-shadow: none;
+      cursor: default;
+    }
+  }
+
+  &-secondary {
+    border: {
+      color: $FlushOrange;
+      style: solid;
+      widht: $borderWidth;
+    }
+    color: $FlushOrange;
+    height: 48px;
+    padding: 16px 16px 15px;
+
+    &:hover {
+      background-image: radial-gradient(circle at 50% 0, $TreePoppy, $FlushOrange);
+      border-bottom-width: 0;
+      color: $White;
+    }
+
+    &:active {
+      background-image: radial-gradient(circle at 50% 0, $TreePoppy, $FlushOrange);
+      border-bottom-width: 0;
+      color: $White;
+    }
+
+    &:disabled {
+      background-image: none;
+      border-color: $Mercury;
+      box-shadow: none;
+      color: $Mercury;
+      cursor: default;
+    }
+  }
+}

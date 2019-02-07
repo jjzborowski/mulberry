@@ -1,0 +1,21 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body{
+  overflow: hidden;
+}
+
+.link {
+  color: #a1a1a1;
+  font-size: 12px;
+  letter-spacing: 0.9px;
+  line-height: 14px;
+
+  &:hover {
+    color: #ff8400;
+  }
+}

@@ -1,0 +1,48 @@
+@import '../../../styles/colors';
+
+.radio {
+  .mark {
+    align-items: center;
+    background-color: transparent;
+    border: {
+      color: $Botticelli;
+      radius: 50%;
+      style: solid;
+      width: 1px;
+    }
+    display: flex;
+    height: 16px;
+    justify-content: center;
+    position: relative;
+    width: 16px;
+
+    &:after {
+      background-color: $Sapphire;
+      border-radius: 50%;
+      content: '';
+      display: none;
+      height: 10px;
+      position: absolute;
+      right: calc(50% - 5px);
+      top: calc(50% - 5px);
+      width: 10px;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked ~ .mark:after {
+      display: inline-block;
+    }
+
+    &:disabled ~ .mark {
+      border: none;
+
+      &:after {
+        display: inline-block;
+        background-color: $Mercury;
+      }
+    }
+  }
+}

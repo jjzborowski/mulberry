@@ -1,0 +1,28 @@
+$breakpoint_large_desktop: 1440;
+$breakpoint_small_desktop: 960;
+$breakpoint_tablet: 768;
+$breakpoint_mobile: 320;
+
+@mixin large_desktop() {
+  @media screen and (min-width: $breakpoint_large_desktop + 'px') {
+    @content;
+  }
+}
+
+@mixin small_desktop() {
+  @media screen and (min-width: $breakpoint_small_desktop + 'px') and (max-width: $breakpoint_large_desktop - 1 + 'px') {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (min-width: $breakpoint_tablet + 'px') and (max-width: $breakpoint_small_desktop - 1 + 'px') {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media screen and (min-width: $breakpoint_mobile + 'px') and (max-width: $breakpoint_tablet - 1 + 'px') {
+    @content;
+  }
+}
