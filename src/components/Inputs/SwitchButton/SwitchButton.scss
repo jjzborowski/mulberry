@@ -16,12 +16,22 @@
     align-items: center;
     border-radius: 44.5px;
     color: $WestSide;
+    cursor: pointer;
     display: flex;
     font-size: 14px;
     height: 55px;
     justify-content: center;
     letter-spacing: 1px;
     padding: 12px 32px 11px;
+
+    svg,
+    svg g{
+      stroke: $WestSide;
+    }
+
+    .label {
+      margin-left: 15px;
+    }
   }
 
   input {
@@ -31,6 +41,15 @@
       background-image: radial-gradient(circle at 50% 0, $TreePoppy, $FlushOrange);
       box-shadow: 0 2px 10px 0 rgba($WestSide, 0.35), inset 0 -1px 0 0 rgba($Indochine, 0.5);
       color: $White;
+
+      svg,
+      svg g{
+        stroke: $White;
+      }
+    }
+
+    &:disabled ~ .mark {
+      cursor: default;
     }
   }
 }

@@ -1,0 +1,32 @@
+@import '../../styles/colors';
+
+.tabs {
+  &-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.tab {
+  display: inline-block;
+
+  &-content-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: stretch;
+
+    input {
+      display: none;
+
+      &:checked ~ .tab-content {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  &-content {
+    display: none;
+  }
+}

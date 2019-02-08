@@ -11,6 +11,22 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                include: [path.join(__dirname, "src/images")],
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'images',
+                        }
+                    },
+                ],
+            },
+            {
                 test: /\.(js|jsx|ts|tsx)$/,
                 use: {
                     loader: 'babel-loader',
