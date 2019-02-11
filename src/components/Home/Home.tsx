@@ -32,18 +32,21 @@ const tabs_setting = {
     tabs: [
         {
             label: 'Unlock Revenue',
-            image: '',
-            content: 'tab 1'
+            image: image1,
+            content: 'tab 1',
+            active: true
         },
         {
-            label: 'BOOST CUSTOMER LOYALTY',
-            image: '',
-            content: 'tab 2'
+            label: 'Boost Customer Loyalty',
+            image: image1,
+            content: 'tab 2',
+            active: false
         },
         {
-            label: 'HOLISTIC CUSTOMER EXPERIENCE',
-            image: '',
-            content: 'tab 3'
+            label: 'Holistic Customer Experience',
+            image: image1,
+            content: 'tab 3',
+            active: false
         }
     ]
 };

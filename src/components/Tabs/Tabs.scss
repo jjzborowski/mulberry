@@ -9,24 +9,51 @@
 }
 
 .tab {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+
+  svg {
+    margin-bottom: 25px;
+
+    * {
+      stroke: $Alto;
+    }
+  }
+
+  &-label {
+    color: $FlushOrange;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
 
   &-content-wrapper {
     align-items: center;
     display: flex;
     justify-content: stretch;
-
-    input {
-      display: none;
-
-      &:checked ~ .tab-content {
-        display: block;
-        width: 100%;
-      }
-    }
   }
 
   &-content {
     display: none;
+  }
+
+  &-active {
+    svg * {
+      stroke: $FlushOrange;
+    }
+  }
+
+  &-active &-label {
+    color: $Sapphire;
+    font-family: MuseoSans;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+
+  &-active &-content {
+    display: inline-block;
   }
 }

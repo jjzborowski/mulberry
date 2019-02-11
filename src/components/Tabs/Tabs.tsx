@@ -1,41 +1,59 @@
 import * as React from 'react';
+import { Component } from 'react';
 import './Tabs.scss';
 
-export default (props: any) => {
-    let tabs = props.settings.tabs.map((tab: any, index: number) => {
-        return (
-            <label
-                className="tab"
-                key={ index }
-                htmlFor={ props.settings.name + index }
-            >
-                { tab.label }
-            </label>
-        );
-    });
-    let content = props.settings.tabs.map((tab: any, index: number) => {
-        return !tab.disable ? (
-            <span
-                className="tab-content-wrapper"
-                key={ index }
-            >
-                <input
-                    type="radio"
-                    name={ props.settings.name }
-                    id={ props.settings.name + index }
-                />
-                <div className="tab-content">
-                    { tab.content }
+class Tabs extends Component<any, any> {
+    constructor(props: any) {
+        super(props);
+        this.state = { ...this.props.settings };
+    }
+
+    switchTab = (index: number) => {
+        this.setState(state => {
+            const tabs = [...state.tabs];
+            tabs.forEach((tab, tabIndex) => {
+                tab.active = tabIndex === index;
+            });
+            return { tabs: tabs };
+        });
+    };
+
+    render() {
+        let tabs = this.props.settings.tabs.map((tab: any, index: number) => {
+            return !tab.disable ? (
+                <div
+                    className={ `tab ${tab.active ? 'tab-active' : ''}` }
+                    key={ index }
+                    onClick={ this.switchTab.bind(this, index) }
+                >
+                    { tab.image() }
+                    <span className="tab-label">
+                        { tab.label }
+                    </span>
                 </div>
-            </span>
-        ) : null;
-    });
-    return (
-        <div className="tabs">
-            <div className="tabs-container">
-                { tabs }
+            ) : null;
+        });
+        let content = this.props.settings.tabs.map((tab: any, index: number) => {
+            return !tab.disable ? (
+                <span
+                    className={ `tab-content-wrapper ${tab.active ? 'tab-active' : ''}` }
+                    key={ index }
+                >
+                    <div className="tab-content">
+                        { tab.content }
+                    </div>
+                </span>
+            ) : null;
+        });
+        return (
+            <div className="tabs">
+                <div className="tabs-container">
+                    { tabs }
+                </div>
+                { content }
             </div>
-            { content }
-        </div>
-    );
+        );
+    }
 }
+
+export default Tabs;

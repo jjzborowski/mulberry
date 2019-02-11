@@ -24,8 +24,7 @@
     letter-spacing: 1px;
     padding: 12px 32px 11px;
 
-    svg,
-    svg g{
+    svg *{
       stroke: $WestSide;
     }
 
@@ -42,8 +41,7 @@
       box-shadow: 0 2px 10px 0 rgba($WestSide, 0.35), inset 0 -1px 0 0 rgba($Indochine, 0.5);
       color: $White;
 
-      svg,
-      svg g{
+      svg *{
         stroke: $White;
       }
     }
