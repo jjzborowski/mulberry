@@ -28,16 +28,6 @@
     text-transform: uppercase;
   }
 
-  &-content-wrapper {
-    align-items: center;
-    display: flex;
-    justify-content: stretch;
-  }
-
-  &-content {
-    display: none;
-  }
-
   &-active {
     svg * {
       stroke: $FlushOrange;
@@ -53,7 +43,13 @@
     text-transform: none;
   }
 
-  &-active &-content {
-    display: inline-block;
+  &-content {
+    display: none;
+
+    &.tab-active {
+      align-items: center;
+      display: flex;
+      justify-content: stretch;
+    }
   }
 }

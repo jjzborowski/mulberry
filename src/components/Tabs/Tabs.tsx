@@ -8,21 +8,15 @@ class Tabs extends Component<any, any> {
         this.state = { ...this.props.settings };
     }
 
-    switchTab = (index: number) => {
-        this.setState(state => {
-            const tabs = [...state.tabs];
-            tabs.forEach((tab, tabIndex) => {
-                tab.active = tabIndex === index;
-            });
-            return { tabs: tabs };
-        });
+    switchTab = (index: number): void => {
+        this.setState(() => ({ active: index }));
     };
 
-    render() {
-        let tabs = this.props.settings.tabs.map((tab: any, index: number) => {
-            return !tab.disable ? (
+    render(): React.ReactNode {
+        let tabs = this.state.tabs.map((tab: any, index: number) => {
+            return !tab.disabled ? (
                 <div
-                    className={ `tab ${tab.active ? 'tab-active' : ''}` }
+                    className={ `tab ${ this.state.active === index ? 'tab-active' : '' }` }
                     key={ index }
                     onClick={ this.switchTab.bind(this, index) }
                 >
@@ -33,16 +27,14 @@ class Tabs extends Component<any, any> {
                 </div>
             ) : null;
         });
-        let content = this.props.settings.tabs.map((tab: any, index: number) => {
-            return !tab.disable ? (
-                <span
-                    className={ `tab-content-wrapper ${tab.active ? 'tab-active' : ''}` }
+        let content = this.state.tabs.map((tab: any, index: number) => {
+            return !tab.disabled ? (
+                <div
+                    className={ `tab-content ${ this.state.active === index ? 'tab-active' : '' }` }
                     key={ index }
                 >
-                    <div className="tab-content">
-                        { tab.content }
-                    </div>
-                </span>
+                    { tab.content }
+                </div>
             ) : null;
         });
         return (

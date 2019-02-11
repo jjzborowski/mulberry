@@ -12,7 +12,7 @@
   justify-content: center;
   padding: 10px;
 
-  .mark {
+  .button {
     align-items: center;
     border-radius: 44.5px;
     color: $WestSide;
@@ -31,12 +31,8 @@
     .label {
       margin-left: 15px;
     }
-  }
 
-  input {
-    display: none;
-
-    &:checked ~ .mark {
+    &.active {
       background-image: radial-gradient(circle at 50% 0, $TreePoppy, $FlushOrange);
       box-shadow: 0 2px 10px 0 rgba($WestSide, 0.35), inset 0 -1px 0 0 rgba($Indochine, 0.5);
       color: $White;
@@ -44,10 +40,6 @@
       svg *{
         stroke: $White;
       }
-    }
-
-    &:disabled ~ .mark {
-      cursor: default;
     }
   }
 }

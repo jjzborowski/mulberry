@@ -9,44 +9,40 @@ import image1 from '../../images/icon-brand-inactive.svg';
 import image2 from '../../images/icon-user-inactive.svg';
 
 const switch_setting = {
-    name: 'switch',
+    active: 0,
     disabled: false,
     buttons: [
         {
-            value: 'on',
             label: 'BRAND',
             image: image1,
-            checked: ''
         },
         {
-            value: 'off',
             label: 'CUSTOMER',
             image: image2,
-            checked: 'checked'
         }
     ]
 };
 
 const tabs_setting = {
-    name: 'tabs',
+    active: 0,
     tabs: [
         {
             label: 'Unlock Revenue',
             image: image1,
             content: 'tab 1',
-            active: true
+            disabled: false
         },
         {
             label: 'Boost Customer Loyalty',
             image: image1,
             content: 'tab 2',
-            active: false
+            disabled: false
         },
         {
             label: 'Holistic Customer Experience',
             image: image1,
             content: 'tab 3',
-            active: false
+            disabled: false
         }
     ]
 };
